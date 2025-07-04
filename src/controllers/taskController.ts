@@ -7,16 +7,27 @@ export const getAll = async (req: any, res: Response) => {
 };
 
 export const create = async (req: any, res: Response) => {
-    const task = await taskService.createTask(req.body.title, req.user.id);
+    const { title, dueDate, completed } = req.body;
+
+    const task = await taskService.createTask(
+        title,
+        req.user.id,
+        completed,
+        dueDate
+    );
+
     res.status(201).json(task);
 };
 
 export const update = async (req: any, res: Response) => {
+    const { completed, title, dueDate } = req.body;
+
     const task = await taskService.updateTask(
         parseInt(req.params.id),
         req.user.id,
-        req.body.completed
+        { title, completed, dueDate }
     );
+
     res.json(task);
 };
 

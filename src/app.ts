@@ -1,9 +1,8 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from './routes/authRoutes';
-import sequelize from './config/db';
 import taskRoutes from './routes/taskRoutes';
-
+import sequelize from './config/db';
 
 dotenv.config();
 
@@ -22,7 +21,9 @@ const PORT = process.env.PORT || 5000;
 
 const start = async () => {
   try {
-    await sequelize.sync(); // DB bağlantısı ve tablo oluşturma
+    // Modeldeki değişiklikleri DB'ye uygula
+    await sequelize.sync({ alter: true });
+
     app.listen(PORT, () => {
       console.log(`✅ Sunucu ${PORT} portunda çalışıyor...`);
     });

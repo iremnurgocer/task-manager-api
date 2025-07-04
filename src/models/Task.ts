@@ -3,6 +3,7 @@ import sequelize from '../config/db';
 import User from './User';
 
 export interface ITask extends Model {
+    dueDate: Date | null;
     id: number;
     title: string;
     completed: boolean;
@@ -26,6 +27,11 @@ const Task = sequelize.define<ITask>('Task', {
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false
+    },
+    dueDate: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: null
     }
 });
 
