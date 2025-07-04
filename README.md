@@ -1,6 +1,6 @@
 # 🗂️ Task Manager API
 
-Bu proje, kullanıcıların JWT ile kimlik doğrulaması yaparak görev (task) yönetimi gerçekleştirebileceği bir RESTful API uygulamasıdır. Amaç, backend geliştirici mülakatlarında öne çıkacak düzeyde bir yapıyı kısa sürede ortaya koymak ve TypeScript, Express, Sequelize gibi modern teknolojilerle çalışabilme yetkinliğini göstermektir.
+Bu proje, kullanıcıların JWT ile kimlik doğrulaması yaparak görev (task) yönetimi gerçekleştirebileceği bir RESTful API uygulamasıdır.
 
 ---
 
